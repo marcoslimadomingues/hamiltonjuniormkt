@@ -1,6 +1,8 @@
 # Site — Hamilton Júnior, Estrategista Digital
 
-Site estático (HTML, CSS e JavaScript puro), mobile-first. Não precisa de build: basta publicar a pasta em qualquer hospedagem (Hostinger, Netlify, Vercel, GitHub Pages etc.). Domínio de produção: `hamiltonjuniormkt.com.br`. Hospedagem: Apache com `.htaccess`.
+Site estático (HTML, CSS e JavaScript puro), mobile-first. Não precisa de build. Domínio de produção: `hamiltonjuniormkt.com.br`, hospedado no **GitHub Pages** (repositório `marcoslimadomingues/hamiltonjuniormkt`, branch `main`, domínio custom via arquivo `CNAME`).
+
+GitHub Pages não roda Apache/Nginx, então tudo aqui é feito só com arquivos estáticos — sem `.htaccess`, sem redirect de servidor, sem headers HTTP customizados além do que o `<meta>` permite. Ative "Enforce HTTPS" em Settings → Pages para o certificado do domínio custom funcionar.
 
 ## Páginas
 
@@ -28,7 +30,7 @@ Site estático (HTML, CSS e JavaScript puro), mobile-first. Não precisa de buil
 3. **Imagem de compartilhamento** — crie `assets/img/og.webp` (1200×630, formato WebP). Todas as páginas já apontam pra esse arquivo em `og:image` e no schema; falta só o arquivo existir.
 4. **Google Search Console** — depois de verificar a propriedade, troque `COLE_AQUI_O_CODIGO_DO_SEARCH_CONSOLE` pelo código real em `index.html` (linha da tag `google-site-verification`, só existe na home).
 5. **Google Analytics 4** — troque as três ocorrências de `G-XXXXXXXXXX` pelo Measurement ID real. O snippet já está no fim do `<body>` de todas as páginas. Se depois for usar Google Tag Manager em vez de gtag.js direto, use só um dos dois — nunca os dois juntos (duplica pageview).
-6. **CSP** — se adicionar outro serviço externo (chat, mapa, vídeo incorporado), inclua o domínio dele em `.htaccess`, na diretiva `Content-Security-Policy`. Sem isso o navegador bloqueia o recurso silenciosamente (só aparece erro no console).
+6. **CSP** — se adicionar outro serviço externo (chat, mapa, vídeo incorporado), inclua o domínio dele na tag `<meta http-equiv="Content-Security-Policy">`, presente no `<head>` de cada página. Sem isso o navegador bloqueia o recurso silenciosamente (só aparece erro no console).
 
 ## Como funciona o contato
 
@@ -52,13 +54,16 @@ Aplicado a partir de um checklist de otimizações replicáveis (canonical/HTTPS
 
 | Arquivo | Função |
 |---|---|
-| `.htaccess` | Força `https://` sem `www` numa única regra, redireciona `favicon.ico`, define CSP e cabeçalhos de segurança, cache de estáticos. |
+| `CNAME` | Domínio custom do GitHub Pages — não apague, é o que faz `hamiltonjuniormkt.com.br` funcionar. |
 | `robots.txt` | Libera todo o crawl e aponta pro sitemap. |
 | `sitemap.xml` | Lista as 6 páginas reais — atualize se criar ou remover página. |
 | `ads.txt` | Vazio de propósito, evita 404 repetido de bots de anúncio (o site não usa AdSense). |
 | `llms.txt` | Resumo do site pra crawlers de IA (ChatGPT, Claude, Perplexity). |
+| `favicon.ico` | Ícone na raiz do domínio — bots e navegadores antigos pedem esse caminho fixo, mesmo com o `<link rel="icon">` apontando pro SVG. |
 
-Cada página também tem `<link rel="canonical">`, Open Graph com `og:url`/`og:image`, e um JSON-LD `@graph` (`ProfessionalService` + `Person` + `WebSite` + `WebPage`) com IDs cruzados entre si.
+Cada página também tem `<link rel="canonical">`, `<meta http-equiv="Content-Security-Policy">`, Open Graph com `og:url`/`og:image`, e um JSON-LD `@graph` (`ProfessionalService` + `Person` + `WebSite` + `WebPage`) com IDs cruzados entre si.
+
+**Limitação do GitHub Pages:** canonical host (força `https://` sem `www`), cabeçalhos como `X-Content-Type-Options` e `Referrer-Policy`, e `frame-ancestors` na CSP só existem via header HTTP real — `<meta>` não os suporta e não há servidor próprio aqui pra defini-los. O canonical host fica a cargo do "Enforce HTTPS" do GitHub Pages e de como o DNS do domínio foi apontado (com ou sem `www`).
 
 **Não incluído de propósito**, porque exigiria dado real ou risco de conteúdo fabricado:
 - `FAQPage` no schema — o site não tem uma seção de perguntas frequentes ainda.
