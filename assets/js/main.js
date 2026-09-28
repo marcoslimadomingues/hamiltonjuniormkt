@@ -90,11 +90,13 @@ const CONFIG = {
       });
       document.querySelectorAll('[data-cta-watch]').forEach((el) => io.observe(el));
     }
+    let threshold = window.innerHeight * 0.45;
     const onScroll = () => {
-      const s = window.scrollY > window.innerHeight * 0.45;
+      const s = window.scrollY > threshold;
       if (s !== scrolled) { scrolled = s; update(); }
     };
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', () => { threshold = window.innerHeight * 0.45; onScroll(); }, { passive: true });
     onScroll();
     update();
   }
