@@ -1,0 +1,16 @@
+# Hamilton Júnior — Estrategista Digital
+
+> Estrategista digital em Fortaleza, Ceará. Planeja e acompanha ações de marketing para pequenos e médios negócios: tráfego pago na Meta (Facebook e Instagram), gestão de redes sociais, produção de conteúdo e integração com promoções e eventos presenciais. Mais de 300 negócios atendidos desde 2011.
+
+## Páginas
+
+- [Início](https://hamiltonjuniormkt.com.br/): apresentação, diferencial e números de experiência.
+- [Sobre mim](https://hamiltonjuniormkt.com.br/sobre.html): trajetória profissional desde 2011.
+- [Serviços](https://hamiltonjuniormkt.com.br/servicos.html): tráfego pago na Meta, gestão de redes sociais, conteúdo/design/vídeo, promoções e eventos.
+- [Como trabalho](https://hamiltonjuniormkt.com.br/como-trabalho.html): processo de trabalho em 6 etapas.
+- [Experiência](https://hamiltonjuniormkt.com.br/experiencia.html): negócios e marcas atendidos.
+- [Contato](https://hamiltonjuniormkt.com.br/contato.html): formulário e WhatsApp.
+
+## Contato
+
+WhatsApp e formulário disponíveis em /contato.html. Atendimento em Fortaleza, CE, e em outras regiões do Brasil.

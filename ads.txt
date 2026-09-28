@@ -1,0 +1,2 @@
+# Este site não veicula anúncios programáticos (AdSense, etc.).
+# Arquivo mantido vazio de propósito para evitar 404 repetido de bots de verificação de anúncios.
