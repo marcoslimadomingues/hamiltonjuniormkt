@@ -26,8 +26,8 @@ GitHub Pages não roda Apache/Nginx, então tudo aqui é feito só com arquivos 
    };
    ```
    Todos os botões de WhatsApp, o rodapé e a página de contato usam esses dados.
-2. **Foto** — salve a foto do Hamilton em `assets/img/hamilton.jpg` (vertical, 4:5, cerca de 800×1000 px). Enquanto ela não existir, aparece o monograma "HJ".
-3. **Imagem de compartilhamento** — crie `assets/img/og.webp` (1200×630, formato WebP). Todas as páginas já apontam pra esse arquivo em `og:image` e no schema; falta só o arquivo existir.
+2. **Foto** — `assets/img/hamilton.jpg` (800×1000) já está no ar, recortada de `Hamilto Junior Perfil.jpg` (mantida fora da pasta publicada, em `../Site Hamilton - arquivos-fonte/`). O arquivo-fonte era 462×462 — se surgir uma foto em resolução maior, vale substituir pra ganhar nitidez. Se a imagem algum dia sumir, o monograma "HJ" reaparece como fallback automático.
+3. **Imagem de compartilhamento** — `assets/img/og.webp` (1200×630) já existe, recortada da mesma foto.
 4. **Google Search Console** — depois de verificar a propriedade, troque `COLE_AQUI_O_CODIGO_DO_SEARCH_CONSOLE` pelo código real em `index.html` (linha da tag `google-site-verification`, só existe na home).
 5. **Google Analytics 4** — troque as três ocorrências de `G-XXXXXXXXXX` pelo Measurement ID real. O snippet já está no fim do `<body>` de todas as páginas. Se depois for usar Google Tag Manager em vez de gtag.js direto, use só um dos dois — nunca os dois juntos (duplica pageview).
 6. **CSP** — se adicionar outro serviço externo (chat, mapa, vídeo incorporado), inclua o domínio dele na tag `<meta http-equiv="Content-Security-Policy">`, presente no `<head>` de cada página. Sem isso o navegador bloqueia o recurso silenciosamente (só aparece erro no console).
@@ -46,7 +46,7 @@ GitHub Pages não roda Apache/Nginx, então tudo aqui é feito só com arquivos 
 | `--paper` | `#F2F5F3` branco frio | fundo de leitura |
 | `--sun` | `#F2B33D` âmbar | ações, WhatsApp, destaques |
 
-Tipografia: Bricolage Grotesque (Google Fonts), em uma família só. Os títulos usam a versão condensada.
+Tipografia: **Fraunces** (serifada, variable font) nos títulos e **Inter** (sans-serif) no corpo de texto, ambas do Google Fonts. Fraunces usa o eixo óptico (`opsz`) alto no `.display` do hero para dar mais contraste em tamanho grande, e mais baixo nos subtítulos.
 
 ## SEO técnico
 
