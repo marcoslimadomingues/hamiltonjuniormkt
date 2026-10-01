@@ -3,9 +3,9 @@
    O número do WhatsApp deve ter apenas dígitos: 55 + DDD + número.
    ========================================================================== */
 const CONFIG = {
-  whatsapp: '5585999999999',            // TODO: número real do Hamilton
-  email: 'contato@seudominio.com.br',   // TODO: e-mail profissional
-  instagram: 'seuperfil',               // TODO: perfil sem @
+  whatsapp: '5585988976824',
+  email: 'hamiltonjuniorconsultor@gmail.com',
+  instagram: 'hamiltonjuniormkt',
   defaultMessage: 'Olá, Hamilton! Vim pelo seu site e quero conversar sobre o meu negócio.'
 };
 
